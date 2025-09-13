@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Planner App</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="bg-gray-900 text-gray-200 font-mono flex items-center justify-center min-h-dvh p-10"
+  >
+    <div
+      class="app w-full max-w-[700px] border-1 border-gray-500 p-8 rounded-xl"
+    >
+      <header class="flex gap-5 mb-8">
+        <input
+          type="text"
+          id="searchCity"
+          placeholder="Enter city..."
+          class="flex-1 border-2 px-4 py-3 focus:shadow-xl rounded-md focus:outline-none"
+        />
+        <button
+          class="bg-gray-100 px-6 py-3 text-black font-bold rounded-md cursor-pointer transition-colors duration-200 hover:bg-gray-300 shadow-lg"
+          id="searchBtn"
+        >
+          Search
+        </button>
+      </header>
+
+      <div class="weather-card">
+        <div class="top-card flex justify-between items-center mb-6">
+          <div class="left-card">
+            <h2 id="city" class="text-2xl mb-2">CITY</h2>
+            <p id="date-time" class="text-gray-50 text-sm mb-2 opacity-80">
+              DATE & TIME
+            </p>
+            <h1 id="temperature" class="text-4xl mb-2">TEMP BIG</h1>
+            <p id="description" class="text-gray-50 opacity-80">
+              Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+
+          <div class="right-card">
+            <img id="temp-img" src="" alt="Current Temperature" />
+          </div>
+        </div>
+        <div class="bottom-card flex justify-around">
+          <p>
+            <i class="fa-solid fa-temperature-low"></i
+            ><span id="humidity"> Humidity </span>
+          </p>
+          <p><i class="fa-solid fa-wind"></i> <span id="wind"> Wind </span></p>
+          <p>
+            Feels like <span id="feels"></span>
+            <i class="fa-solid fa-percent"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
