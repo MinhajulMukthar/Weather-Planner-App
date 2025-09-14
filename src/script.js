@@ -41,5 +41,29 @@ async function fetchWeatherInfo() {
 
 function renderInfo(data) {
 
+  cityEl.textContent = data.name;
+  dateTimeEl.textContent = formatDate();
+  temperatureEl.textContent = `${Math.round(data.main.temp)}°C`;
+  descriptionEl.textContent = data.weather[0].description;
 
+  const iconCode = data.weather[0].icon; // e.g. "04d"
+  tempImg.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  tempImg.alt = data.weather[0].main;
+
+  humiditySpan.textContent = `${data.main.humidity}%`;
+  windSpan.textContent = `${data.wind.speed} m/s`;
+  feelsLikeSpan.textContent = `${Math.round(data.main.feels_like)}°C`;
+}
+
+
+function formatDate() {
+  const now = new Date();
+  return now.toLocaleString("en-US", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
 }
